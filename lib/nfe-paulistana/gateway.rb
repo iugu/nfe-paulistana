@@ -2,10 +2,6 @@ require 'savon'
 
 module NfePaulistana
   class Gateway
-    Savon.configure do |config|
-      config.soap_version = 2
-    end
-    Savon.env_namespace = :soap
 
     METHODS = {
       envio_rps: "EnvioRPSRequest",
@@ -22,9 +18,11 @@ module NfePaulistana
 
     def initialize(options = {})
       @options = {
-        cert_path: "", 
-        cert_pass: "",
-        wdsl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
+        ssl_cert_p12_path: "",
+        ssl_cert_path: "", 
+        ssl_key_path: "", 
+        ssl_cert_pass: "",
+        wsdl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
       }.merge(options)
     end
 
@@ -71,32 +69,20 @@ module NfePaulistana
     private
 
     def certificate
-      OpenSSL::PKCS12.new(File.read(@options[:cert_path]), @options[:cert_pass])
+      OpenSSL::PKCS12.new(File.read(@options[:ssl_cert_p12_path]), @options[:ssl_cert_pass])
     end
 
     def request(method, data = {})
       certificado = certificate
-      client = get_client(certificado)
-      response = client.request(method) do |soap|
-        soap.input = [ 
-            METHODS[method], 
-              {"xmlns" => "http://www.prefeitura.sp.gov.br/nfe"}
-        ]
-        soap.body = XmlBuilder.new.xml_for(method, data, certificado)
-        soap.version = 2
-      end
+      client = get_client
+      response = client.call(method, message: XmlBuilder.new.xml_for(method, data, certificado))
       method_response = (method.to_s + "_response").to_sym
-      Response.new(xml: response.to_hash[method_response][:retorno_xml], method: method)
+      Response.new(xml: response.hash[:envelope][:body][method_response][:retorno_xml], method: method)
     rescue Savon::Error => error
     end
 
-    def get_client(certificado)
-      Savon::Client.new do |wsdl, http|
-        wsdl.document = @options[:wdsl]
-        http.auth.ssl.cert_key = certificado.key
-        http.auth.ssl.cert = certificado.certificate
-        http.auth.ssl.verify_mode = :peer
-      end
+    def get_client
+      Savon.client(soap_version: 2, env_namespace: :soap, ssl_verify_mode: :peer, ssl_cert_file: @options[:ssl_cert_path], ssl_cert_key_file: @options[:ssl_key_path], ssl_cert_key_password: @options[:ssl_cert_pass], wsdl: @options[:wsdl], env_namespace: :soap, namespace_identifier: nil)
     end
   end
 end

@@ -4,7 +4,7 @@ Nota Fiscal Paulistana
 Instanciando o Gateway
 --------------------
 
-      gateway = NfePaulistana::Gateway.new(cert_path: "path/to/certificate.p12", cert_pass: "password")
+      gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.p12", ssl_cert_path: "path/to/certificate.pem", ssl_key_path: "path/to/key.pem", ssl_cert_pass: "password")
 
 Metodos
 ------------
