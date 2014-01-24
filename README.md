@@ -10,7 +10,7 @@ Metodos
 ------------
 
 **EnvioRPS**
-      
+
       response = gateway.envio_rps({
         :cnpj_remetente => "99999999999999",
         :inscricao_prestador => "99999999",
@@ -38,7 +38,7 @@ Metodos
         :qtd_rps => "2",
         :valor_total_servicos => "20.00",
         :valor_total_deducoes => "0",
-        :lote_rps => => [{
+        :lote_rps => [{
           :inscricao_prestador => "99999999",
           :data_emissao => "AAAA-MM-DD",
           :email_tomador => "email@email.email",
@@ -79,7 +79,7 @@ Metodos
         :qtd_rps => "2",
         :valor_total_servicos => "20.00",
         :valor_total_deducoes => "0",
-        :lote_rps => => [{
+        :lote_rps => [{
           :inscricao_prestador => "99999999",
           :data_emissao => "AAAA-MM-DD",
           :email_tomador => "email@email.email",
