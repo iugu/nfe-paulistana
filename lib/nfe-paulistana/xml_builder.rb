@@ -58,7 +58,7 @@ module NfePaulistana
     end
 
     private
-    
+
     def xml(method, data, certificado)
       builder = Nokogiri::XML::Builder.new do |xml|
         xml.send(METHODS[method], "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema", "xmlns" => "http://www.prefeitura.sp.gov.br/nfe" ) {
@@ -72,7 +72,7 @@ module NfePaulistana
           send("add_#{method}_data_to_xml", xml, data, certificado)
         }
       end
-      puts builder.to_xml
+
       Nokogiri::XML( builder.to_xml( :save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION ) )
     end
 
@@ -221,7 +221,7 @@ module NfePaulistana
         xml.AliquotaServicos data[:aliquota_servicos]
         xml.ISSRetido data[:iss_retido]
         unless (data[:cpf_tomador].blank? and data[:cnpj_tomador].blank?)
-          xml.CPFCNPJTomador { 
+          xml.CPFCNPJTomador {
             xml.CPF data[:cpf_tomador] unless data[:cpf_tomador].blank?
             xml.CNPJ data[:cnpj_tomador] unless data[:cnpj_tomador].blank?
           }
@@ -263,7 +263,7 @@ module NfePaulistana
       end
 
       # 3. Add Elements to Signature Node
-      
+
       # 3.1 Create Signature Info
       signature_info = Nokogiri::XML::Node.new('SignedInfo', xml)
 
@@ -298,7 +298,7 @@ module NfePaulistana
       child_node  = Nokogiri::XML::Node.new('DigestMethod', xml)
       child_node['Algorithm'] = 'http://www.w3.org/2000/09/xmldsig#sha1'
       reference.add_child child_node
-      
+
       # 3.6 Add DigestValue
       child_node  = Nokogiri::XML::Node.new('DigestValue', xml)
       child_node.content = xml_digest
@@ -320,7 +320,7 @@ module NfePaulistana
 
       # 5 Create KeyInfo
       key_info = Nokogiri::XML::Node.new('KeyInfo', xml)
-      
+
       # 5.1 Add X509 Data and Certificate
       x509_data = Nokogiri::XML::Node.new('X509Data', xml)
       x509_certificate = Nokogiri::XML::Node.new('X509Certificate', xml)
@@ -345,7 +345,7 @@ module NfePaulistana
       value = part_1 + part_2
       assinatura_simples(value, certificado)
     end
-    
+
     def assinatura_envio_rps(data, certificado)
       part_1 = data[:inscricao_prestador].rjust(8,'0')
       part_2 = data[:serie_rps].ljust(5)
@@ -369,6 +369,5 @@ module NfePaulistana
       sign_hash = certificado.key.sign( OpenSSL::Digest::SHA1.new, value )
       Base64.encode64( sign_hash ).gsub("\n",'').gsub("\r",'').strip()
     end
-
   end
 end

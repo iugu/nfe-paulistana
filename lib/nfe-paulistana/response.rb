@@ -6,8 +6,9 @@ module NfePaulistana
       consulta_n_fe_emitidas: :consulta,
       consulta_n_fe_recebidas: :consulta,
       consulta_lote: :consulta,
-      consulta_informacoes_lote: :informacoes_lote,
+      consulta_informacoes_lote: :informacoes_lote
     }
+
     def initialize(options = {})
       @options = options
     end
@@ -17,7 +18,9 @@ module NfePaulistana
     end
 
     def retorno
-      Nori.parse(xml)[("retorno_" + (RETURN_ROOT[@options[:method]] || @options[:method]).to_s).to_sym]
+      Nori.new(convert_tags_to: ->(tag) { tag.snakecase.to_sym }).parse(xml)[
+        ("retorno_" + (RETURN_ROOT[@options[:method]] || @options[:method]).to_s).to_sym
+      ]
     end
 
     def success?
