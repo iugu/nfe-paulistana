@@ -5,9 +5,9 @@ require "nfe-paulistana/version"
 Gem::Specification.new do |s|
   s.name        = "nfe-paulistana"
   s.version     = NfePaulistana::VERSION
-  s.authors     = ["Marcelo Paez"]
-  s.email       = ["marcelo@iugu.com.br"]
-  s.homepage    = "https://iugu.com.br"
+  s.authors     = ["Marcelo Paez Sequeira"]
+  s.email       = ["marcelo@iugu.com"]
+  s.homepage    = "https://iugu.com"
   s.summary     = %q{Notafiscal Eletronica}
   s.description = %q{Gema para utilização do Webservice da Nf Paulistana}
 

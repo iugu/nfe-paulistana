@@ -16,8 +16,12 @@ module NfePaulistana
       @options[:xml]
     end
 
+    def nfe_method
+      @options[:method]
+    end
+
     def retorno
-      Nori.parse(xml)[("retorno_" + (RETURN_ROOT[@options[:method]] || @options[:method]).to_s).to_sym]
+      Nori.new(:convert_tags_to => lambda { |tag| tag.snakecase.to_sym }).parse(xml)[("retorno_" + (RETURN_ROOT[@options[:method]] || @options[:method]).to_s).to_sym]
     end
 
     def success?

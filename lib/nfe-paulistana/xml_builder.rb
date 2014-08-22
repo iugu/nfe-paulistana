@@ -36,8 +36,12 @@ module NfePaulistana
       :iss_retido => false,
       :cpf_tomador => '',
       :cnpj_tomador => '',
+      :iss_retido_intermediario => false,
+      :cpf_intermediario => '',
+      :cnpj_intermediario => '',
       :im_tomador => '',
       :ie_tomador => '',
+      :im_intermediario => '',
       :razao_tomador => '',
       :tp_logradouro => '',
       :logradouro => '',
@@ -48,6 +52,7 @@ module NfePaulistana
       :uf => '',
       :cep => '',
       :email_tomador => '',
+      :email_intermediario => '',
       :discriminacao => '',
       :wsdl => 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
     }
@@ -72,7 +77,6 @@ module NfePaulistana
           send("add_#{method}_data_to_xml", xml, data, certificado)
         }
       end
-      puts builder.to_xml
       Nokogiri::XML( builder.to_xml( :save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION ) )
     end
 
@@ -242,6 +246,15 @@ module NfePaulistana
           }
         end
         xml.EmailTomador data[:email_tomador]
+        unless (data[:cpf_intermediario].blank? and data[:cnpj_intermediario].blank?)
+          xml.CPFCNPJIntermediario { 
+            xml.CPF data[:cpf_intermediario] unless data[:cpf_intermediario].blank?
+            xml.CNPJ data[:cnpj_intermediario] unless data[:cnpj_intermediario].blank?
+          }
+          xml.InscricaoMunicipalIntermediario data[:im_intermediario] unless data[:im_intermediario].blank?
+          xml.ISSRetidoIntermediario data[:iss_retido_intermediario]
+          xml.EmailIntermediario data[:email_intermediario]
+        end
         xml.Discriminacao data[:discriminacao]
       }
     end
@@ -359,8 +372,11 @@ module NfePaulistana
       part_10 = data[:codigo_servico].rjust(5,'0')
       part_11 = (data[:cpf_tomador].blank? ? (data[:cnpj_tomador].blank? ? '3' : '2') : '1')
       part_12 = (data[:cpf_tomador].blank? ? (data[:cnpj_tomador].blank? ? "".rjust(14,'0') : data[:cnpj_tomador].rjust(14,'0') ) : data[:cpf_tomador].rjust(14,'0'))
+      part_13 = (data[:cpf_intermediario].blank? ? (data[:cnpj_intermediario].blank? ? '3' : '2') : '1')
+      part_14 = (data[:cpf_intermediario].blank? ? (data[:cnpj_intermediario].blank? ? "".rjust(14,'0') : data[:cnpj_intermediario].rjust(14,'0') ) : data[:cpf_intermediario].rjust(14,'0'))
+      part_15 = data[:iss_retido_intermediario] ? 'S' : 'N'
 
-      value = part_1 + part_2 + part_3 + part_4 + part_5 + part_6 + part_7 + part_8 + part_9 + part_10 + part_11 + part_12
+      value = part_1 + part_2 + part_3 + part_4 + part_5 + part_6 + part_7 + part_8 + part_9 + part_10 + part_11 + part_12 + part_13 + part_14 + part_15
 
       assinatura_simples(value, certificado)
     end
