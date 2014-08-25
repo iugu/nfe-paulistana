@@ -246,6 +246,7 @@ module NfePaulistana
           }
         end
         xml.EmailTomador data[:email_tomador]
+=begin
         unless (data[:cpf_intermediario].blank? and data[:cnpj_intermediario].blank?)
           xml.CPFCNPJIntermediario { 
             xml.CPF data[:cpf_intermediario] unless data[:cpf_intermediario].blank?
@@ -255,6 +256,7 @@ module NfePaulistana
           xml.ISSRetidoIntermediario data[:iss_retido_intermediario]
           xml.EmailIntermediario data[:email_intermediario]
         end
+=end
         xml.Discriminacao data[:discriminacao]
       }
     end
@@ -372,11 +374,14 @@ module NfePaulistana
       part_10 = data[:codigo_servico].rjust(5,'0')
       part_11 = (data[:cpf_tomador].blank? ? (data[:cnpj_tomador].blank? ? '3' : '2') : '1')
       part_12 = (data[:cpf_tomador].blank? ? (data[:cnpj_tomador].blank? ? "".rjust(14,'0') : data[:cnpj_tomador].rjust(14,'0') ) : data[:cpf_tomador].rjust(14,'0'))
+=begin
       part_13 = (data[:cpf_intermediario].blank? ? (data[:cnpj_intermediario].blank? ? '3' : '2') : '1')
       part_14 = (data[:cpf_intermediario].blank? ? (data[:cnpj_intermediario].blank? ? "".rjust(14,'0') : data[:cnpj_intermediario].rjust(14,'0') ) : data[:cpf_intermediario].rjust(14,'0'))
       part_15 = data[:iss_retido_intermediario] ? 'S' : 'N'
+=end
 
-      value = part_1 + part_2 + part_3 + part_4 + part_5 + part_6 + part_7 + part_8 + part_9 + part_10 + part_11 + part_12 + part_13 + part_14 + part_15
+      #value = part_1 + part_2 + part_3 + part_4 + part_5 + part_6 + part_7 + part_8 + part_9 + part_10 + part_11 + part_12 + part_13 + part_14 + part_15
+      value = part_1 + part_2 + part_3 + part_4 + part_5 + part_6 + part_7 + part_8 + part_9 + part_10 + part_11 + part_12
 
       assinatura_simples(value, certificado)
     end
