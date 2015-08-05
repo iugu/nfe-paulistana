@@ -83,8 +83,7 @@ module NfePaulistana
     end
 
     def get_client
-      Savon.client(soap_version: 2, 
-                   env_namespace: :soap, 
+      Savon.client(env_namespace: :soap,
                    ssl_verify_mode: :peer, 
                    ssl_cert_file: @options[:ssl_cert_path], 
                    ssl_cert_key_file: @options[:ssl_key_path], 
