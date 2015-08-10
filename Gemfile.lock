@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nfe-paulistana (1.0.2)
+    nfe-paulistana (1.0.3)
       nokogiri (= 1.5.9)
       savon (= 2.3.0)
       signer
@@ -22,14 +22,14 @@ GEM
     debugger-ruby_core_source (1.3.5)
     gyoku (1.1.1)
       builder (>= 2.1.2)
-    httpi (2.1.0)
+    httpi (2.1.1)
       rack
       rubyntlm (~> 0.3.2)
     mime-types (1.25.1)
     minitest (5.4.0)
     nokogiri (1.5.9)
     nori (2.3.0)
-    rack (1.5.2)
+    rack (1.6.4)
     rake (10.3.2)
     rubyntlm (0.3.4)
     savon (2.3.0)
@@ -40,7 +40,7 @@ GEM
       nokogiri (>= 1.4.0, < 1.6)
       nori (~> 2.3.0)
       wasabi (~> 3.2.0)
-    signer (1.4.0)
+    signer (1.4.2)
       nokogiri (>= 1.5.1)
     wasabi (3.2.3)
       httpi (~> 2.0)
