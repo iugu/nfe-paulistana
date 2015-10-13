@@ -89,7 +89,6 @@ module NfePaulistana
                    ssl_cert_key_file: @options[:ssl_key_path], 
                    ssl_cert_key_password: @options[:ssl_cert_pass], 
                    wsdl: @options[:wsdl], 
-                   env_namespace: :soap, 
                    namespace_identifier: nil)
     end
   end
