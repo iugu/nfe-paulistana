@@ -25,5 +25,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency "minitest"
   s.add_development_dependency "debugger"
+  s.add_development_dependency "debugger-ruby_core_source"
   # s.add_runtime_dependency "rest-client"
 end
