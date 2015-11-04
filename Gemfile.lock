@@ -52,6 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   debugger
+  debugger-ruby_core_source
   minitest
   nfe-paulistana!
   rake
