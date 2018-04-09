@@ -19,9 +19,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "nokogiri", ">= 1.5.9"
-  s.add_dependency "savon", "~> 2.3"
+  s.add_dependency "savon", "~> 2.11"
   s.add_dependency "signer"
+
   s.add_development_dependency "rake"
   s.add_development_dependency "minitest"
-  s.add_development_dependency "debugger"
+  s.add_development_dependency "pry-nav"
 end
