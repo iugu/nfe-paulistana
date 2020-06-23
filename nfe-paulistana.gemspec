@@ -5,8 +5,8 @@ require "nfe-paulistana/version"
 Gem::Specification.new do |s|
   s.name        = "nfe-paulistana"
   s.version     = NfePaulistana::VERSION
-  s.authors     = ["Marcelo Paez Sequeira"]
-  s.email       = ["marcelo@iugu.com"]
+  s.authors     = ["iugu", "Patrick Ribeiro Negri", "Marcelo Paez Sequeira"]
+  s.email       = ["patrick@iugu.com"]
   s.homepage    = "https://iugu.com"
   s.summary     = %q{Notafiscal Eletronica}
   s.description = %q{Gema para utilização do Webservice da Nf Paulistana}
@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "nokogiri", ">= 1.10.8"
-  s.add_dependency "savon", "~> 2.12"
+  s.add_dependency "nokogiri", ">= 1.9.1"
+  s.add_dependency "savon", ">= 2.12"
   s.add_dependency "signer"
 
   s.add_development_dependency "rake"

@@ -79,7 +79,8 @@ module NfePaulistana
       response = client.call(method, message: message)
       method_response = (method.to_s + "_response").to_sym
       Response.new(xml: response.hash[:envelope][:body][method_response][:retorno_xml], method: method)
-    rescue Savon::Error
+    rescue Savon::Error => error
+      error
     end
 
     def get_client

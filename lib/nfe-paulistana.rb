@@ -25,6 +25,7 @@ module NfePaulistana
       })
       Response.new(xml: response.hash[:envio_rps_response][:retorno_xml], method: :envio_rps_response)
     rescue Savon::Error => error
+      error
     end
   end
 
