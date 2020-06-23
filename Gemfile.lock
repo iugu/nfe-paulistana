@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    nfe-paulistana (1.0.4)
+    nfe-paulistana (1.0.5)
       nokogiri (>= 1.10.8)
-      savon (~> 2.11)
+      savon (~> 2.12)
       signer
 
 GEM
@@ -22,7 +22,7 @@ GEM
     method_source (0.8.2)
     mini_portile2 (2.4.0)
     minitest (5.4.0)
-    nokogiri (1.10.8)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     nori (2.6.0)
     pry (0.10.4)
@@ -31,7 +31,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
-    rack (2.2.2)
+    rack (2.2.3)
     rake (10.3.2)
     savon (2.12.0)
       akami (~> 1.2)
