@@ -22,7 +22,7 @@ GEM
     method_source (0.8.2)
     mini_portile2 (2.4.0)
     minitest (5.4.0)
-    nokogiri (1.9.1)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     nori (2.6.0)
     pry (0.10.4)
