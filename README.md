@@ -6,6 +6,16 @@ Instanciando o Gateway
 
       gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.p12", ssl_cert_path: "path/to/certificate.pem", ssl_key_path: "path/to/key.pem", ssl_cert_pass: "password")
 
+Use Savon (And HTTPI as HTTP interface)
+-------------------
+If you experience trouble with the HTTPI cURL adapter:
+HTTPI.adapter = :net_http
+
+Install certificate chain
+-------------------
+Dont forget to check if you have ca chain installed.
+More info: https://help.ubuntu.com/community/OpenSSL
+
 Metodos
 ------------
 
