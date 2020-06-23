@@ -32,7 +32,7 @@ GEM
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
     rack (2.1.4)
-    rake (10.3.2)
+    rake (13.0.1)
     savon (2.12.0)
       akami (~> 1.2)
       builder (>= 2.1.2)
