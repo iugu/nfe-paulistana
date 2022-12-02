@@ -20,8 +20,6 @@ module NfePaulistana
     def initialize(options = {})
       @options = {
         ssl_cert_p12_path: '',
-        ssl_cert_path: '',
-        ssl_key_path: '',
         ssl_cert_pass: '',
         wsdl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
       }.merge(options)
@@ -75,7 +73,7 @@ module NfePaulistana
 
     def request(method, data = {})
       certificado = certificate
-      client = get_client
+      client = fetch_client(certificate)
       message = XmlBuilder.new.xml_for(method, data, certificado)
       response = client.call(method, message:)
       method_response = "#{method}_response".to_sym
@@ -84,14 +82,19 @@ module NfePaulistana
       e
     end
 
-    def get_client
-      Savon.client(env_namespace: :soap,
-                   ssl_verify_mode: :peer,
-                   ssl_cert_file: @options[:ssl_cert_path],
-                   ssl_cert_key_file: @options[:ssl_key_path],
-                   ssl_cert_key_password: @options[:ssl_cert_pass],
-                   wsdl: @options[:wsdl],
-                   namespace_identifier: nil)
+    def fetch_client(pkcs)
+      cert = Tempfile.new
+      cert << pkcs.certificate.to_pem
+      cert.flush
+
+      key = Tempfile.new
+      key << pkcs.key.to_pem
+      key.flush
+      Savon.client(
+        env_namespace: :soap, ssl_verify_mode: :peer,
+        ssl_cert_file: cert.path, ssl_cert_key_file: key.path, ssl_cert_key_password: @options[:ssl_cert_pass],
+        wsdl: @options[:wsdl], namespace_identifier: nil
+      )
     end
   end
 end

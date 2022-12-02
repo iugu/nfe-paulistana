@@ -1,27 +1,29 @@
 Nota Fiscal Paulistana
-=============
+======================
 
 Instanciando o Gateway
---------------------
+----------------------
 
-      gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.p12", ssl_cert_path: "path/to/certificate.pem", ssl_key_path: "path/to/key.pem", ssl_cert_pass: "password")
+    gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.p12", ssl_cert_path: "path/to/certificate.pem", ssl_key_path: "path/to/key.pem", ssl_cert_pass: "password")
 
 Use Savon (And HTTPI as HTTP interface)
--------------------
+---------------------------------------
+
 If you experience trouble with the HTTPI cURL adapter:
 HTTPI.adapter = :net_http
 
 Install certificate chain
--------------------
+-------------------------
+
 Dont forget to check if you have ca chain installed.
 More info: https://help.ubuntu.com/community/OpenSSL
 
 Metodos
-------------
+-------
 
 **EnvioRPS**
-      
-      response = gateway.envio_rps({
+
+    response = gateway.envio_rps({
         :cnpj_remetente => "99999999999999",
         :inscricao_prestador => "99999999",
         :data_emissao => "AAAA-MM-DD",
@@ -40,7 +42,7 @@ Metodos
 
 **EnvioLoteRPS**
 
-      response = gateway.envio_lote_rps({
+    response = gateway.envio_lote_rps({
         :cnpj_remetente => "99999999999999",
         :inscricao_prestador => "99999999",
         :data_inicio => "AAAA-MM-DD",
@@ -81,7 +83,7 @@ Metodos
 
 **TesteEnvioLoteRPS**
 
-      response = gateway.teste_envio_lote_rps({
+    response = gateway.teste_envio_lote_rps({
         :cnpj_remetente => "99999999999999",
         :inscricao_prestador => "99999999",
         :data_inicio => "AAAA-MM-DD",
@@ -122,13 +124,13 @@ Metodos
 
 **ConsultaNFe**
 
-      response = gateway.consulta_nfe({
+    response = gateway.consulta_nfe({
         cnpj_remetente: "99999999999999",
         inscricao_prestador: "99999999",
         numero_nfe: "9"
       })
 
-      response = gateway.consulta_nfe({
+    response = gateway.consulta_nfe({
         cnpj_remetente: "99999999999999",
         numero_rps: "9",
         serie_rps: "AAAAA"
@@ -136,18 +138,17 @@ Metodos
 
 **ConsultaNFeRecebidas**
 
-      response = gateway.consulta_nfe_recebidas({
-        cnpj_remetente: "99999999999999",
-        cnpj: "99999999999999",
-        data_inicio: "AAAA-MM-DD",
-        data_fim: "AAAA-MM-DD",
-        inscricao: "99999999"
+    response = gateway.consulta_nfe_recebidas({
+        cnpj_remetente: "",
+        cnpj: "38240036000115",
+        data_inicio: "2022-11-01",
+        data_fim: "2022-11-30",
+        inscricao: ""
       })
-
 
 **ConsultaNFeEmitidas**
 
-      response = gateway.consulta_nfe_emitidas({
+    response = gateway.consulta_nfe_emitidas({
         cnpj_remetente: "99999999999999",
         cnpj: "99999999999999",
         data_inicio: "AAAA-MM-DD",
@@ -157,14 +158,14 @@ Metodos
 
 **ConsultaLote**
 
-      response = gateway.consulta_lote({
+    response = gateway.consulta_lote({
         :cnpj_remetente => "99999999999999",
         :numero_lote => "9"
       })
 
 **ConsultaInformacoesLote**
 
-      response = gateway.consulta_informacoes_lote({
+    response = gateway.consulta_informacoes_lote({
         :cnpj_remetente => "99999999999999",
         :inscricao_prestador => "99999999",
         :numero_lote => "9"
@@ -172,7 +173,7 @@ Metodos
 
 **CancelamentoNFe**
 
-      response = gateway.cancelamento_nfe({
+    response = gateway.cancelamento_nfe({
         cnpj_remetente: "99999999999999",
         inscricao_prestador: "99999999",
         numero_nfe: "9"
@@ -180,7 +181,7 @@ Metodos
 
 **ConsultaCNPJ**
 
-      response = gateway.consulta_cnpj({
+    response = gateway.consulta_cnpj({
         cnpj_remetente: "99999999999999",
         cnpj_contribuinte: "99999999999999"
       })
