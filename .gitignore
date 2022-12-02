@@ -19,3 +19,4 @@ pkg/*
 db/schema.rb
 public/system/*
 public/system/**
+.env

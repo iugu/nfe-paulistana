@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NfePaulistana
   class Response
     RETURN_ROOT = {
@@ -6,8 +8,8 @@ module NfePaulistana
       consulta_n_fe_emitidas: :consulta,
       consulta_n_fe_recebidas: :consulta,
       consulta_lote: :consulta,
-      consulta_informacoes_lote: :informacoes_lote,
-    }
+      consulta_informacoes_lote: :informacoes_lote
+    }.freeze
     def initialize(options = {})
       @options = options
     end
@@ -21,7 +23,9 @@ module NfePaulistana
     end
 
     def retorno
-      Nori.new(:convert_tags_to => lambda { |tag| tag.snakecase.to_sym }).parse(xml)[("retorno_" + (RETURN_ROOT[@options[:method]] || @options[:method]).to_s).to_sym]
+      Nori.new(convert_tags_to: lambda { |tag|
+                                  tag.snakecase.to_sym
+                                }).parse(xml)["retorno_#{RETURN_ROOT[@options[:method]] || @options[:method]}".to_sym]
     end
 
     def success?
@@ -29,7 +33,8 @@ module NfePaulistana
     end
 
     def errors
-      return unless !success?
+      return if success?
+
       retorno[:alerta] || retorno[:erro]
     end
   end
