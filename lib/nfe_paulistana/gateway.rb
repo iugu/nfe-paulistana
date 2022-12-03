@@ -17,12 +17,8 @@ module NfePaulistana
       consulta_informacoes_lote: 'ConsultaInformacoesLoteRequest'
     }.freeze
 
-    def initialize(options = {})
-      @options = {
-        ssl_cert_p12_path: '',
-        ssl_cert_pass: ''
-      }.merge(options)
-      @connection = NfePaulistana::Connection.new(@options[:ssl_cert_p12_path], @options[:ssl_cert_pass])
+    def initialize(ssl_cert_p12_path, ssl_cert_pass)
+      @connection = NfePaulistana::Connection.new(ssl_cert_p12_path, ssl_cert_pass)
     end
 
     def envio_rps(data = {})
