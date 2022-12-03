@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'nfe-paulistana'
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = ['lib']
 
@@ -24,6 +23,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'signer'
 
   s.add_development_dependency 'minitest'
+  s.add_development_dependency 'net-smtp'
   s.add_development_dependency 'pry-nav'
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'rubocop'
+  s.metadata['rubygems_mfa_required'] = 'true'
 end
