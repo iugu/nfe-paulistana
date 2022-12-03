@@ -25,10 +25,8 @@ GEM
       mini_mime (>= 0.1.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.16.3)
-    nokogiri (1.13.9)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.9-arm64-darwin)
       racc (~> 1.4)
     nori (2.6.0)
     pry (0.14.1)
@@ -58,7 +56,7 @@ GEM
       nokogiri (>= 1.4.2)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
   minitest
@@ -67,4 +65,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.17.3
+   2.3.26

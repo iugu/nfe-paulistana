@@ -4,7 +4,9 @@ Nota Fiscal Paulistana
 Instanciando o Gateway
 ----------------------
 
-    gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.p12", ssl_cert_path: "path/to/certificate.pem", ssl_key_path: "path/to/key.pem", ssl_cert_pass: "password")
+    gateway = NfePaulistana::Gateway.new(ssl_cert_p12_path: "path/to/certificate.(p12 ou pfx)", ssl_cert_pass: "password")
+
+    ****OBS:** pfx and p12 is same files, you don't need convert.
 
 Use Savon (And HTTPI as HTTP interface)
 ---------------------------------------
