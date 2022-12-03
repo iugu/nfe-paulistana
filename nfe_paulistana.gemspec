@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'nfe-paulistana/version'
+require 'nfe_paulistana/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'nfe-paulistana'
+  s.name        = 'nfe_paulistana'
   s.version     = NfePaulistana::VERSION
   s.authors     = ['iugu', 'Patrick Ribeiro Negri', 'Marcelo Paez Sequeira']
   s.email       = ['patrick@iugu.com']
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Notafiscal Eletronica'
   s.description = 'Gema para utilização do Webservice da Nf Paulistana'
 
-  s.rubyforge_project = 'nfe-paulistana'
+  s.rubyforge_project = 'nfe_paulistana'
 
   s.files         = `git ls-files`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }

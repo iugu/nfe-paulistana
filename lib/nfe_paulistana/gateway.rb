@@ -20,9 +20,9 @@ module NfePaulistana
     def initialize(options = {})
       @options = {
         ssl_cert_p12_path: '',
-        ssl_cert_pass: '',
-        wsdl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
+        ssl_cert_pass: ''
       }.merge(options)
+      @connection = NfePaulistana::Connection.new(@options[:ssl_cert_p12_path], @options[:ssl_cert_pass])
     end
 
     def envio_rps(data = {})
@@ -67,34 +67,12 @@ module NfePaulistana
 
     private
 
-    def certificate
-      OpenSSL::PKCS12.new(File.read(@options[:ssl_cert_p12_path]), @options[:ssl_cert_pass])
-    end
-
     def request(method, data = {})
-      certificado = certificate
-      client = fetch_client(certificate)
-      message = XmlBuilder.new.xml_for(method, data, certificado)
-      response = client.call(method, message:)
+      response = @connection.client.call(method, message: XmlBuilder.new.xml_for(method, data, @connection.certificate))
       method_response = "#{method}_response".to_sym
       Response.new(xml: response.hash[:envelope][:body][method_response][:retorno_xml], method:)
     rescue Savon::Error => e
       e
-    end
-
-    def fetch_client(pkcs)
-      cert = Tempfile.new
-      cert << pkcs.certificate.to_pem
-      cert.flush
-
-      key = Tempfile.new
-      key << pkcs.key.to_pem
-      key.flush
-      Savon.client(
-        env_namespace: :soap, ssl_verify_mode: :peer,
-        ssl_cert_file: cert.path, ssl_cert_key_file: key.path, ssl_cert_key_password: @options[:ssl_cert_pass],
-        wsdl: @options[:wsdl], namespace_identifier: nil
-      )
     end
   end
 end

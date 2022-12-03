@@ -2,5 +2,5 @@
 
 source 'http://rubygems.org'
 
-# Specify your gem's dependencies in nfe-paulistana.gemspec
+# Specify your gem's dependencies in nfe_paulistana.gemspec
 gemspec

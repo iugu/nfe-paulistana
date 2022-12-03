@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nfe-paulistana (1.1.0)
+    nfe_paulistana (1.1.0)
       nokogiri (>= 1.9.1)
       savon (>= 2.12)
       signer
@@ -87,7 +87,7 @@ PLATFORMS
 DEPENDENCIES
   minitest
   net-smtp
-  nfe-paulistana!
+  nfe_paulistana!
   pry-nav
   rake
   rubocop

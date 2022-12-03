@@ -55,7 +55,7 @@ module NfePaulistana
       email_tomador: '',
       email_intermediario: '',
       discriminacao: '',
-      wsdl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
+      wsdl: NfePaulistana::WSDL
     }.freeze
 
     def xml_for(method, data, certificado)
