@@ -54,8 +54,7 @@ module NfePaulistana
       cep: '',
       email_tomador: '',
       email_intermediario: '',
-      discriminacao: '',
-      wsdl: NfePaulistana::WSDL
+      discriminacao: ''
     }.freeze
 
     def xml_for(method, data, certificado)
