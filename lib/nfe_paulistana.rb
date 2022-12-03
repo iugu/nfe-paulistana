@@ -7,6 +7,7 @@ require 'nfe_paulistana/gateway'
 require 'nfe_paulistana/connection'
 require 'signer'
 require 'savon'
+require 'byebug'
 # gem for working invoiuces in city São Paulo
 module NfePaulistana
   WSDL = 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'

@@ -1,6 +1,8 @@
 Nota Fiscal Paulistana
 ======================
 
+Forked from: https://github.com/iugu/nfe-paulistana
+
 Instanciando o Gateway
 ----------------------
 

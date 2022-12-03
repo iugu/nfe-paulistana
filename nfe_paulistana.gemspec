@@ -6,10 +6,10 @@ require 'nfe_paulistana/version'
 Gem::Specification.new do |s|
   s.name        = 'nfe_paulistana'
   s.version     = NfePaulistana::VERSION
-  s.authors     = ['iugu', 'Patrick Ribeiro Negri', 'Marcelo Paez Sequeira']
-  s.email       = ['patrick@iugu.com']
-  s.homepage    = 'https://iugu.com'
-  s.summary     = 'Notafiscal Eletronica'
+  s.authors     = ['Sidedoor { }', 'Rafael Rosa - Sidedoor { }']
+  s.email       = ['rafael@sidedoor.com.br']
+  s.homepage    = 'https://sidedoor.com.br'
+  s.summary     = 'Nota Fiscal de Serviço Eletronica'
   s.description = 'Gema para utilização do Webservice da Nf Paulistana'
 
   s.rubyforge_project = 'nfe_paulistana'

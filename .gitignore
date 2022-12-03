@@ -20,3 +20,4 @@ db/schema.rb
 public/system/*
 public/system/**
 .env
+.byebug_history
