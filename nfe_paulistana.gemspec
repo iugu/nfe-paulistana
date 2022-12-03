@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'savon', '>= 2.12'
   s.add_dependency 'signer'
 
+  s.add_development_dependency 'byebug'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'net-smtp'
   s.add_development_dependency 'pry-nav'
