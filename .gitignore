@@ -21,3 +21,4 @@ public/system/*
 public/system/**
 .env
 .byebug_history
+*.pfx.pfx

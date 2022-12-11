@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nfe_paulistana (1.1.0)
+    nfe_paulistana (2.0.0)
       nokogiri (>= 1.9.1)
       savon (>= 2.12)
       signer
@@ -18,22 +18,32 @@ GEM
     builder (3.2.4)
     byebug (11.1.3)
     coderay (1.1.3)
+    diff-lcs (1.5.0)
+    dotenv (2.8.1)
     gyoku (1.4.0)
       builder (>= 2.1.2)
       rexml (~> 3.0)
     httpi (3.0.1)
       rack
     json (2.6.2)
-    mail (2.7.1)
+    mail (2.8.0)
       mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.16.3)
+    net-imap (0.3.1)
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.1.3)
       timeout
     net-smtp (0.3.3)
       net-protocol
     nokogiri (1.13.9-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     nori (2.6.0)
     parallel (1.22.1)
@@ -45,12 +55,25 @@ GEM
     pry-nav (1.0.0)
       pry (>= 0.9.10, < 0.15)
     public_suffix (5.0.0)
-    racc (1.6.0)
-    rack (3.0.1)
+    racc (1.6.1)
+    rack (3.0.2)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.1)
     rexml (3.2.5)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
     rubocop (1.39.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -84,14 +107,16 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   byebug
-  minitest
+  dotenv (~> 2.5)
   net-smtp
   nfe_paulistana!
   pry-nav
   rake
+  rspec (~> 3.6)
   rubocop
 
 BUNDLED WITH

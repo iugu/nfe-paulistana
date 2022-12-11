@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'nokogiri', '>= 1.9.1'
   s.add_dependency 'savon', '>= 2.12'
   s.add_dependency 'signer'
-
+  s.add_development_dependency 'rspec', '~> 3.6'
+  s.add_development_dependency 'dotenv', '~> 2.5'
   s.add_development_dependency 'byebug'
-  s.add_development_dependency 'minitest'
   s.add_development_dependency 'net-smtp'
   s.add_development_dependency 'pry-nav'
   s.add_development_dependency 'rake'
