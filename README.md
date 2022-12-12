@@ -189,3 +189,27 @@ Metodos
         cnpj_remetente: "99999999999999",
         cnpj_contribuinte: "99999999999999"
       })
+
+**ConsultaCNPJ Todas Notas Recebidas Período**
+
+    response = gateway.consulta_nfe_recebidas_todas({
+        cnpj_remetente: "99999999999999",
+        cnpj_contribuinte: "99999999999999"
+      })
+ ****OBS:** Cadas página é colocada numa posição no objeto do tipo array que poderá ser manipulado como array ou convertido para Hash. Exemplo h = response[0].to_h
+
+
+**Exemplo Arquivo .env**
+CERT_PATH="Cert.pfx"
+CERT_PASS="password"
+CNPJ_REMETENTE=""
+CNPJ=""
+DATA_INICIO=""
+DATA_FIM=""
+
+**Carregar as variáveis de ambiente**
+export $(cat ./.env | grep -v ^# | xargs) >/dev/null
+
+**Teste de Busca Todas Notas por período**
+rspec spec/lib/nfe_paulistana/nfe_recebidas.rb 
+

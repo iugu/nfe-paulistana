@@ -45,6 +45,18 @@ module NfePaulistana
       request(:consulta_n_fe_recebidas, data)
     end
 
+    def consulta_nfe_recebidas_todas(data = {})
+      resposta = []
+      pagina = 1
+      loop do
+        data[:pagina] = pagina
+        resposta << request(:consulta_n_fe_recebidas, data).retorno
+        pagina = pagina + 1
+      break if !resposta.last.include?(:n_fe)
+      end
+      return resposta
+    end
+
     def consulta_nfe_emitidas(data = {})
       request(:consulta_n_fe_emitidas, data)
     end
