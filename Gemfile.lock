@@ -20,10 +20,11 @@ GEM
       rack
       socksify
     method_source (0.8.2)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.8.1)
     minitest (5.4.0)
-    nokogiri (1.9.1)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.14.3)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nori (2.6.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -31,6 +32,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
+    racc (1.6.2)
     rack (2.1.4)
     rake (10.3.2)
     savon (2.12.0)
