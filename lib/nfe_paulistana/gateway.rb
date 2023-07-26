@@ -51,10 +51,10 @@ module NfePaulistana
       loop do
         data[:pagina] = pagina
         resposta << request(:consulta_n_fe_recebidas, data).retorno
-        pagina = pagina + 1
-      break if !resposta.last.include?(:n_fe)
+        pagina += 1
+        break unless resposta.last.include?(:n_fe)
       end
-      return resposta
+      resposta
     end
 
     def consulta_nfe_emitidas(data = {})
@@ -78,7 +78,7 @@ module NfePaulistana
     def request(method, data = {})
       response = @connection.client.call(method, message: XmlBuilder.new.xml_for(method, data, @connection.certificate))
       method_response = "#{method}_response".to_sym
-      Response.new(xml: response.hash[:envelope][:body][method_response][:retorno_xml], method:)
+      Response.new(xml: response.body[method_response][:retorno_xml], method:).retorno
     rescue Savon::Error => e
       e
     end

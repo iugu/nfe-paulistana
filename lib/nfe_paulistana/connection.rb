@@ -9,7 +9,7 @@ module NfePaulistana
     def initialize(ssl_cert_p12_path, ssl_cert_pass, wsdl = NfePaulistana::WSDL)
       @ssl_cert_p12_path = ssl_cert_p12_path
       @ssl_cert_pass = ssl_cert_pass
-      @certificate = OpenSSL::PKCS12.new(File.read(ssl_cert_p12_path), ssl_cert_pass)
+      @certificate = OpenSSL::PKCS12.new(File.binread(ssl_cert_p12_path), ssl_cert_pass)
       @wsdl = wsdl
     end
 
