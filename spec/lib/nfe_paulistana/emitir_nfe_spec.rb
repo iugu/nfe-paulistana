@@ -28,19 +28,6 @@ describe 'NFE' do
           discriminacao: 'Teste via API'
         }
       )
-      byebug
-      response = gateway.cancelamento_nfe({
-        cnpj_remetente: "99999999999999",
-        inscricao_prestador: "99999999",
-        numero_nfe: "9"
-      })
-
-      response = @gateway.cancelamento_nfe({
-                                         cnpj_remetente: '38240036000204',
-                                         inscricao_prestador: '77764684',
-                                         numero_nfe: '1'
-                                       })
-      byebug
     end
   end
 end

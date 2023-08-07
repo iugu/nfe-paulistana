@@ -1,9 +1,4 @@
-require 'bundler/setup'
-require 'nfe_paulistana'
-require 'byebug'
-require 'dotenv'
-
-Dotenv.load
+require 'spec_helper'
 describe 'NFE' do
   describe '#nfe_consulta' do
     before(:each) do
@@ -11,17 +6,32 @@ describe 'NFE' do
     end
 
     it 'returns nfe_recebidas total' do
-      response = @gateway.consulta_nfe_recebidas({
-                                                   cnpj_remetente: '',
-
-                                                   cnpj: '38240036000204',
-                                                   data_inicio: '2022-11-01',
-                                                   data_fim: '2022-11-30',
-                                                   inscricao: '77764684'
-                                                 })
-
-      byebug
-      expect(response[:n_fe].last.keys).to include(:chave_n_fe)
+      VCR.use_cassette('nfe_recebidas') do
+        response = @gateway.consulta_nfe_recebidas(
+          {
+            cnpj_remetente: ENV['CNPJ'],
+            cnpj: ENV['CNPJ'],
+            data_inicio: '2023-07-01',
+            data_fim: '2023-07-30',
+            inscricao: '77764684'
+          }
+        )
+        expect(response.retorno[:cabecalho][:sucesso]).to eq(true)
+      end
+    end
+    it 'busca as notas fiscais emitidas' do
+      VCR.use_cassette('nfe_emitidas') do
+        response = @gateway.consulta_nfe_emitidas(
+          {
+            cnpj_remetente: ENV['CNPJ'],
+            cnpj: ENV['CNPJ'],
+            data_inicio: '2023-08-01',
+            data_fim: '2023-08-07',
+            inscricao: '77764684'
+          }
+        )
+        expect(response.retorno[:cabecalho][:sucesso]).to eq(true)
+      end
     end
   end
 end

@@ -1,0 +1,374 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 3.1.2 (2022-04-12))
+      Accept:
+      - "*/*"
+      Date:
+      - Mon, 07 Aug 2023 19:02:53 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      Expect-Ct:
+      - enforce, max-age=86400
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-eval' 'unsafe-inline' https://fonts.googleapis.com
+        https://fonts.gstatic.com;
+      Server-Timing:
+      - dtSInfo;desc="1"
+      Set-Cookie:
+      - dtCookie=v_4_srv_10_sn_E174AECA359B4968A8D9192DED6E4BD9_perc_100000_ol_0_mul_1_app-3Adb66c4a801656e04_0;
+        Path=/; Domain=.sp.gov.br
+      Date:
+      - Mon, 07 Aug 2023 19:02:53 GMT
+      Content-Length:
+      - '19004'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:s=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\" xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\"
+        xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"http://www.prefeitura.sp.gov.br/nfe\"
+        xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\"
+        xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" targetNamespace=\"http://www.prefeitura.sp.gov.br/nfe\"
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n  <wsdl:types>\r\n    <s:schema
+        elementFormDefault=\"qualified\" targetNamespace=\"http://www.prefeitura.sp.gov.br/nfe\">\r\n
+        \     <s:element name=\"EnvioRPSRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"EnvioRPSResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"EnvioLoteRPSRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"EnvioLoteRPSResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"TesteEnvioLoteRPSRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"TesteEnvioLoteRPSResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"CancelamentoNFeRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"CancelamentoNFeResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaNFeRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaNFeResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaNFeRecebidasRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaNFeRecebidasResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaNFeEmitidasRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaNFeEmitidasResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaLoteRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaLoteResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaInformacoesLoteRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaInformacoesLoteResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"ConsultaCNPJRequest\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VersaoSchema\" type=\"s:int\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MensagemXML\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ConsultaCNPJResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RetornoXML\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \   </s:schema>\r\n  </wsdl:types>\r\n  <wsdl:message name=\"EnvioRPSSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:EnvioRPSRequest\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"EnvioRPSSoapOut\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:EnvioRPSResponse\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"EnvioLoteRPSSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:EnvioLoteRPSRequest\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"EnvioLoteRPSSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:EnvioLoteRPSResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TesteEnvioLoteRPSSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:TesteEnvioLoteRPSRequest\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TesteEnvioLoteRPSSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:TesteEnvioLoteRPSResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CancelamentoNFeSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CancelamentoNFeRequest\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CancelamentoNFeSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CancelamentoNFeResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ConsultaNFeSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:ConsultaNFeRequest\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"ConsultaNFeSoapOut\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:ConsultaNFeResponse\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"ConsultaNFeRecebidasSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:ConsultaNFeRecebidasRequest\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"ConsultaNFeRecebidasSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:ConsultaNFeRecebidasResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"ConsultaNFeEmitidasSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:ConsultaNFeEmitidasRequest\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"ConsultaNFeEmitidasSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:ConsultaNFeEmitidasResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"ConsultaLoteSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:ConsultaLoteRequest\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ConsultaLoteSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:ConsultaLoteResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"ConsultaInformacoesLoteSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:ConsultaInformacoesLoteRequest\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ConsultaInformacoesLoteSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:ConsultaInformacoesLoteResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ConsultaCNPJSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:ConsultaCNPJRequest\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"ConsultaCNPJSoapOut\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:ConsultaCNPJResponse\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:portType name=\"LoteNFeSoap\">\r\n    <wsdl:operation name=\"EnvioRPS\">\r\n
+        \     <wsdl:input message=\"tns:EnvioRPSSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:EnvioRPSSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"EnvioLoteRPS\">\r\n      <wsdl:input message=\"tns:EnvioLoteRPSSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:EnvioLoteRPSSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"TesteEnvioLoteRPS\">\r\n      <wsdl:input message=\"tns:TesteEnvioLoteRPSSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:TesteEnvioLoteRPSSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"CancelamentoNFe\">\r\n      <wsdl:input message=\"tns:CancelamentoNFeSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:CancelamentoNFeSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"ConsultaNFe\">\r\n      <wsdl:input message=\"tns:ConsultaNFeSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:ConsultaNFeSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"ConsultaNFeRecebidas\">\r\n      <wsdl:input message=\"tns:ConsultaNFeRecebidasSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:ConsultaNFeRecebidasSoapOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"ConsultaNFeEmitidas\">\r\n
+        \     <wsdl:input message=\"tns:ConsultaNFeEmitidasSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:ConsultaNFeEmitidasSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"ConsultaLote\">\r\n      <wsdl:input message=\"tns:ConsultaLoteSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:ConsultaLoteSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"ConsultaInformacoesLote\">\r\n      <wsdl:input
+        message=\"tns:ConsultaInformacoesLoteSoapIn\" />\r\n      <wsdl:output message=\"tns:ConsultaInformacoesLoteSoapOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"ConsultaCNPJ\">\r\n
+        \     <wsdl:input message=\"tns:ConsultaCNPJSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:ConsultaCNPJSoapOut\" />\r\n    </wsdl:operation>\r\n  </wsdl:portType>\r\n
+        \ <wsdl:binding name=\"LoteNFeSoap\" type=\"tns:LoteNFeSoap\">\r\n    <soap:binding
+        transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n    <wsdl:operation
+        name=\"EnvioRPS\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/envioRPS\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"EnvioLoteRPS\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/envioLoteRPS\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"TesteEnvioLoteRPS\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/testeenvio\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelamentoNFe\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/cancelamentoNFe\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFe\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFe\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFeRecebidas\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFeRecebidas\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFeEmitidas\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFeEmitidas\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaLote\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaLote\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaInformacoesLote\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaInformacoesLote\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaCNPJ\">\r\n      <soap:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaCNPJ\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"LoteNFeSoap12\" type=\"tns:LoteNFeSoap\">\r\n    <soap12:binding
+        transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n    <wsdl:operation
+        name=\"EnvioRPS\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/envioRPS\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"EnvioLoteRPS\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/envioLoteRPS\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"TesteEnvioLoteRPS\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/testeenvio\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelamentoNFe\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/cancelamentoNFe\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFe\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFe\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFeRecebidas\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFeRecebidas\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaNFeEmitidas\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFeEmitidas\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaLote\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaLote\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaInformacoesLote\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaInformacoesLote\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"ConsultaCNPJ\">\r\n      <soap12:operation soapAction=\"http://www.prefeitura.sp.gov.br/nfe/ws/consultaCNPJ\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:service name=\"LoteNFe\">\r\n    <wsdl:port name=\"LoteNFeSoap\" binding=\"tns:LoteNFeSoap\">\r\n
+        \     <soap:address location=\"https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"LoteNFeSoap12\" binding=\"tns:LoteNFeSoap12\">\r\n
+        \     <soap12:address location=\"https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+  recorded_at: Mon, 07 Aug 2023 19:02:53 GMT
+- request:
+    method: post
+    uri: https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.prefeitura.sp.gov.br/nfe"
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+        xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.prefeitura.sp.gov.br/nfe"
+        xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><soap:Body><ConsultaNFeEmitidasRequest><VersaoSchema>1</VersaoSchema><MensagemXML>&lt;PedidoConsultaNFePeriodo
+        xmlns=&quot;http://www.prefeitura.sp.gov.br/nfe&quot;&gt;&lt;Cabecalho xmlns=&quot;&quot;
+        Versao=&quot;1&quot;&gt;&lt;CPFCNPJRemetente&gt;&lt;CNPJ&gt;38240036000204&lt;/CNPJ&gt;&lt;/CPFCNPJRemetente&gt;&lt;CPFCNPJ&gt;&lt;CNPJ&gt;38240036000204&lt;/CNPJ&gt;&lt;/CPFCNPJ&gt;&lt;Inscricao&gt;77764684&lt;/Inscricao&gt;&lt;dtInicio&gt;2023-08-01&lt;/dtInicio&gt;&lt;dtFim&gt;2023-08-07&lt;/dtFim&gt;&lt;NumeroPagina&gt;1&lt;/NumeroPagina&gt;&lt;/Cabecalho&gt;&lt;Signature
+        xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;&lt;SignedInfo&gt;&lt;CanonicalizationMethod
+        Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;&gt;&lt;/CanonicalizationMethod&gt;&lt;SignatureMethod
+        Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;&gt;&lt;/SignatureMethod&gt;&lt;Reference
+        URI=&quot;&quot;&gt;&lt;Transforms&gt;&lt;Transform Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#enveloped-signature&quot;&gt;&lt;/Transform&gt;&lt;Transform
+        Algorithm=&quot;http://www.w3.org/TR/2001/REC-xml-c14n-20010315&quot;&gt;&lt;/Transform&gt;&lt;/Transforms&gt;&lt;DigestMethod
+        Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;&gt;&lt;/DigestMethod&gt;&lt;DigestValue&gt;+MNIisTPCgXkgJu38ccpN8nGBGY=&lt;/DigestValue&gt;&lt;/Reference&gt;&lt;/SignedInfo&gt;&lt;SignatureValue&gt;eEUloVmu5oK26D/KqqmiHeL0B2FcZ178J4xUc2vrz1snncr1f7QB1732LeH44A3EahMvgq2FOYbpDZS70mSlQkC1ffEinu2cr1XdTRQGKVhVkun2WTlgputNob26GmgT9BJigB+5p07Wbz+ApSSofsU0g09xN0wgegEl8gBMZTPA7hEqhLhRutouIIWKj/HyzXGpEUWdApNU+uZyyF36QVXb4yLcyfymwgL6MnxqJ6P7D/ioEC+N1GJo3EdG/hLdlIkCX+8bSxhW24r4lMxddXVB6ClSl1wv7VnzClc5FSQGMy0eHwf52qpOd6MBC74MdQp/ez80yY1IY7JUObispg==&lt;/SignatureValue&gt;&lt;KeyInfo&gt;&lt;X509Data&gt;&lt;X509Certificate&gt;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&lt;/X509Certificate&gt;&lt;/X509Data&gt;&lt;/KeyInfo&gt;&lt;/Signature&gt;&lt;/PedidoConsultaNFePeriodo&gt;</MensagemXML></ConsultaNFeEmitidasRequest></soap:Body></soap:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 3.1.2 (2022-04-12))
+      Accept:
+      - "*/*"
+      Date:
+      - Mon, 07 Aug 2023 19:02:53 GMT
+      Soapaction:
+      - '"http://www.prefeitura.sp.gov.br/nfe/ws/consultaNFeEmitidas"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '5299'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      Expect-Ct:
+      - enforce, max-age=86400
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-eval' 'unsafe-inline' https://fonts.googleapis.com
+        https://fonts.gstatic.com;
+      Server-Timing:
+      - dtSInfo;desc="1"
+      Set-Cookie:
+      - dtCookie=v_4_srv_17_sn_63A0EECD6171B121A80FD6ABA3B05F09_perc_100000_ol_0_mul_1_app-3Adb66c4a801656e04_0;
+        Path=/; Domain=.sp.gov.br
+      Date:
+      - Mon, 07 Aug 2023 19:02:53 GMT
+      Content-Length:
+      - '7736'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><ConsultaNFeEmitidasResponse
+        xmlns="http://www.prefeitura.sp.gov.br/nfe"><RetornoXML>&lt;?xml version="1.0"
+        encoding="UTF-8"?&gt;&lt;RetornoConsulta xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.prefeitura.sp.gov.br/nfe"&gt;&lt;Cabecalho
+        Versao="1" xmlns=""&gt;&lt;Sucesso&gt;true&lt;/Sucesso&gt;&lt;/Cabecalho&gt;&lt;NFe
+        xmlns=""&gt;&lt;Assinatura&gt;d7sE+7ftur9WAxen4gguL923E8w1guyJ7ShMakqqcMeHp2FesbBuaOdEUTPjOwYa/SmXUStJR8EJFwSgQIqOs5C4TuAYGcJ+L37RedtRHjq+MFtk/JVw4XyD0YQZc1XQqNl+DmT6wRnbRhpZ8acISsYPBpZNv0OH+y1FAss1pEFSpcrk6d7UqRiyZt3hRWZvuODIayo3w+0V6XIgIZUyimknDP6R20gQUS0YV72pNxXqlX1kjz4wkTXD2czGmq++9NTab0imwzNPieggDSWydwhh+Re8o1NrXB8ARi8yLpdGNVOsSVAlvMZHkh4LaivRfXfSVIaPCpgjtnKIvMVuuQ==&lt;/Assinatura&gt;&lt;ChaveNFe&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;NumeroNFe&gt;4&lt;/NumeroNFe&gt;&lt;CodigoVerificacao&gt;NDK9VNPW&lt;/CodigoVerificacao&gt;&lt;/ChaveNFe&gt;&lt;DataEmissaoNFe&gt;2023-08-03T18:27:36&lt;/DataEmissaoNFe&gt;&lt;ChaveRPS&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;SerieRPS&gt;00001&lt;/SerieRPS&gt;&lt;NumeroRPS&gt;5&lt;/NumeroRPS&gt;&lt;/ChaveRPS&gt;&lt;TipoRPS&gt;RPS&lt;/TipoRPS&gt;&lt;DataEmissaoRPS&gt;2023-07-27&lt;/DataEmissaoRPS&gt;&lt;DataFatoGeradorNFe&gt;2023-07-27T00:00:00&lt;/DataFatoGeradorNFe&gt;&lt;CPFCNPJPrestador&gt;&lt;CNPJ&gt;38240036000204&lt;/CNPJ&gt;&lt;/CPFCNPJPrestador&gt;&lt;RazaoSocialPrestador&gt;CUIDAR.ME
+        SAUDE S.A.&lt;/RazaoSocialPrestador&gt;&lt;EnderecoPrestador&gt;&lt;TipoLogradouro&gt;R&lt;/TipoLogradouro&gt;&lt;Logradouro&gt;ARTUR
+        DE AZEVEDO&lt;/Logradouro&gt;&lt;NumeroEndereco&gt;289&lt;/NumeroEndereco&gt;&lt;ComplementoEndereco&gt;SALA  UB05&lt;/ComplementoEndereco&gt;&lt;Bairro&gt;CERQUEIRA
+        CESAR&lt;/Bairro&gt;&lt;Cidade&gt;3550308&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;CEP&gt;5404010&lt;/CEP&gt;&lt;/EnderecoPrestador&gt;&lt;StatusNFe&gt;N&lt;/StatusNFe&gt;&lt;TributacaoNFe&gt;T&lt;/TributacaoNFe&gt;&lt;OpcaoSimples&gt;0&lt;/OpcaoSimples&gt;&lt;ValorServicos&gt;500&lt;/ValorServicos&gt;&lt;CodigoServico&gt;5274&lt;/CodigoServico&gt;&lt;AliquotaServicos&gt;0.02&lt;/AliquotaServicos&gt;&lt;ValorISS&gt;10&lt;/ValorISS&gt;&lt;ValorCredito&gt;0&lt;/ValorCredito&gt;&lt;ISSRetido&gt;false&lt;/ISSRetido&gt;&lt;CPFCNPJTomador&gt;&lt;CPF&gt;40304247839&lt;/CPF&gt;&lt;/CPFCNPJTomador&gt;&lt;RazaoSocialTomador&gt;RAFAEL
+        ROSA PEREIRA&lt;/RazaoSocialTomador&gt;&lt;EnderecoTomador&gt;&lt;Cidade&gt;3523404&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;/EnderecoTomador&gt;&lt;EmailTomador&gt;rafael.rosa@cuidar.me&lt;/EmailTomador&gt;&lt;Discriminacao&gt;Teste
+        via API&lt;/Discriminacao&gt;&lt;FonteCargaTributaria /&gt;&lt;/NFe&gt;&lt;NFe
+        xmlns=""&gt;&lt;Assinatura&gt;Hzim3eUwqGYwh/5OGcjYoN5AeZCohnqHVe6/1Wn0v09alLqz1WJtdYbA1VaHNsCS1VUIVyxB4fXhZsuoDuZsFvfPex64IRGNZzh0/EnPLwujwoRqN+R2ru5ZOj6pGxJarYKO/JNfc+47psVdo+EPd2Qvb/zdiRt2eSaUzHjRujxt1Ufz2Dfgu9AMUoysGJhqMlUQOh9+HsSj9U5ShRiYrAXcY3mMKVUk/TZKiq+TCVYGwZBQAamTvDZypU7DXOYRV2WbPOPHl17rBRV+YHl2s6FPEIZlfu6+bjtQF3Y9pwnyUxsRe7jhZw0EjXNJBFrE9sRknrI8dtGr+H6zbRtiZA==&lt;/Assinatura&gt;&lt;ChaveNFe&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;NumeroNFe&gt;5&lt;/NumeroNFe&gt;&lt;CodigoVerificacao&gt;Q7RNR5KU&lt;/CodigoVerificacao&gt;&lt;/ChaveNFe&gt;&lt;DataEmissaoNFe&gt;2023-08-03T18:30:47&lt;/DataEmissaoNFe&gt;&lt;ChaveRPS&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;SerieRPS&gt;00001&lt;/SerieRPS&gt;&lt;NumeroRPS&gt;6&lt;/NumeroRPS&gt;&lt;/ChaveRPS&gt;&lt;TipoRPS&gt;RPS&lt;/TipoRPS&gt;&lt;DataEmissaoRPS&gt;2023-07-27&lt;/DataEmissaoRPS&gt;&lt;DataFatoGeradorNFe&gt;2023-07-27T00:00:00&lt;/DataFatoGeradorNFe&gt;&lt;CPFCNPJPrestador&gt;&lt;CNPJ&gt;38240036000204&lt;/CNPJ&gt;&lt;/CPFCNPJPrestador&gt;&lt;RazaoSocialPrestador&gt;CUIDAR.ME
+        SAUDE S.A.&lt;/RazaoSocialPrestador&gt;&lt;EnderecoPrestador&gt;&lt;TipoLogradouro&gt;R&lt;/TipoLogradouro&gt;&lt;Logradouro&gt;ARTUR
+        DE AZEVEDO&lt;/Logradouro&gt;&lt;NumeroEndereco&gt;289&lt;/NumeroEndereco&gt;&lt;ComplementoEndereco&gt;SALA  UB05&lt;/ComplementoEndereco&gt;&lt;Bairro&gt;CERQUEIRA
+        CESAR&lt;/Bairro&gt;&lt;Cidade&gt;3550308&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;CEP&gt;5404010&lt;/CEP&gt;&lt;/EnderecoPrestador&gt;&lt;StatusNFe&gt;N&lt;/StatusNFe&gt;&lt;TributacaoNFe&gt;T&lt;/TributacaoNFe&gt;&lt;OpcaoSimples&gt;0&lt;/OpcaoSimples&gt;&lt;ValorServicos&gt;500&lt;/ValorServicos&gt;&lt;CodigoServico&gt;5274&lt;/CodigoServico&gt;&lt;AliquotaServicos&gt;0.02&lt;/AliquotaServicos&gt;&lt;ValorISS&gt;10&lt;/ValorISS&gt;&lt;ValorCredito&gt;0&lt;/ValorCredito&gt;&lt;ISSRetido&gt;false&lt;/ISSRetido&gt;&lt;CPFCNPJTomador&gt;&lt;CPF&gt;40304247839&lt;/CPF&gt;&lt;/CPFCNPJTomador&gt;&lt;RazaoSocialTomador&gt;RAFAEL
+        ROSA PEREIRA&lt;/RazaoSocialTomador&gt;&lt;EnderecoTomador&gt;&lt;Cidade&gt;3523404&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;/EnderecoTomador&gt;&lt;EmailTomador&gt;rafael.rosa@cuidar.me&lt;/EmailTomador&gt;&lt;Discriminacao&gt;Teste
+        via API&lt;/Discriminacao&gt;&lt;FonteCargaTributaria /&gt;&lt;/NFe&gt;&lt;NFe
+        xmlns=""&gt;&lt;Assinatura&gt;I9hrZwB2agWx5xo/trEE79Hn2Nc+LcRIJi8Fq4qXE955WIi8uMMHAUIQ42egALx5n8KdaB6fRKb43k502swwhKejKwOMRQm6XCByersa78us2OwPaXnIAgS874EO5G3WUio9SFV7DOfrtOUNzMHxInWYnWdc7jUq704p65re2RuqC7tM/dc/DctxpD4m9DAWroyUTsrQvsWHMZKMOW/wkb3vWRzMJvrNtCoZXySF/ECjk8RCmh20LV1oSQglEDxFuyjtysai3y2/+MVkUJM1mmNiP8LQWIR9e+0COYEVTrCyvZ+R9eQm5YZxap8FakPA8OQ4r8+11yxU+mL81n/awA==&lt;/Assinatura&gt;&lt;ChaveNFe&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;NumeroNFe&gt;6&lt;/NumeroNFe&gt;&lt;CodigoVerificacao&gt;L7M2RCPJ&lt;/CodigoVerificacao&gt;&lt;/ChaveNFe&gt;&lt;DataEmissaoNFe&gt;2023-08-03T18:33:00&lt;/DataEmissaoNFe&gt;&lt;ChaveRPS&gt;&lt;InscricaoPrestador&gt;77764684&lt;/InscricaoPrestador&gt;&lt;SerieRPS&gt;00001&lt;/SerieRPS&gt;&lt;NumeroRPS&gt;7&lt;/NumeroRPS&gt;&lt;/ChaveRPS&gt;&lt;TipoRPS&gt;RPS&lt;/TipoRPS&gt;&lt;DataEmissaoRPS&gt;2023-07-27&lt;/DataEmissaoRPS&gt;&lt;DataFatoGeradorNFe&gt;2023-07-27T00:00:00&lt;/DataFatoGeradorNFe&gt;&lt;CPFCNPJPrestador&gt;&lt;CNPJ&gt;38240036000204&lt;/CNPJ&gt;&lt;/CPFCNPJPrestador&gt;&lt;RazaoSocialPrestador&gt;CUIDAR.ME
+        SAUDE S.A.&lt;/RazaoSocialPrestador&gt;&lt;EnderecoPrestador&gt;&lt;TipoLogradouro&gt;R&lt;/TipoLogradouro&gt;&lt;Logradouro&gt;ARTUR
+        DE AZEVEDO&lt;/Logradouro&gt;&lt;NumeroEndereco&gt;289&lt;/NumeroEndereco&gt;&lt;ComplementoEndereco&gt;SALA  UB05&lt;/ComplementoEndereco&gt;&lt;Bairro&gt;CERQUEIRA
+        CESAR&lt;/Bairro&gt;&lt;Cidade&gt;3550308&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;CEP&gt;5404010&lt;/CEP&gt;&lt;/EnderecoPrestador&gt;&lt;StatusNFe&gt;N&lt;/StatusNFe&gt;&lt;TributacaoNFe&gt;T&lt;/TributacaoNFe&gt;&lt;OpcaoSimples&gt;0&lt;/OpcaoSimples&gt;&lt;ValorServicos&gt;500&lt;/ValorServicos&gt;&lt;CodigoServico&gt;5274&lt;/CodigoServico&gt;&lt;AliquotaServicos&gt;0.02&lt;/AliquotaServicos&gt;&lt;ValorISS&gt;10&lt;/ValorISS&gt;&lt;ValorCredito&gt;0&lt;/ValorCredito&gt;&lt;ISSRetido&gt;false&lt;/ISSRetido&gt;&lt;CPFCNPJTomador&gt;&lt;CPF&gt;40304247839&lt;/CPF&gt;&lt;/CPFCNPJTomador&gt;&lt;RazaoSocialTomador&gt;RAFAEL
+        ROSA PEREIRA&lt;/RazaoSocialTomador&gt;&lt;EnderecoTomador&gt;&lt;Cidade&gt;3523404&lt;/Cidade&gt;&lt;UF&gt;SP&lt;/UF&gt;&lt;/EnderecoTomador&gt;&lt;EmailTomador&gt;rafael.rosa@cuidar.me&lt;/EmailTomador&gt;&lt;Discriminacao&gt;Teste
+        via API&lt;/Discriminacao&gt;&lt;FonteCargaTributaria /&gt;&lt;/NFe&gt;&lt;/RetornoConsulta&gt;</RetornoXML></ConsultaNFeEmitidasResponse></soap:Body></soap:Envelope>
+  recorded_at: Mon, 07 Aug 2023 19:02:53 GMT
+recorded_with: VCR 6.2.0

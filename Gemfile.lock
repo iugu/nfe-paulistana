@@ -18,12 +18,15 @@ GEM
     builder (3.2.4)
     byebug (11.1.3)
     coderay (1.1.3)
+    crack (0.4.5)
+      rexml
     date (3.3.3)
     diff-lcs (1.5.0)
     dotenv (2.8.1)
     gyoku (1.4.0)
       builder (>= 2.1.2)
       rexml (~> 3.0)
+    hashdiff (1.0.1)
     httpi (3.0.1)
       rack
     json (2.6.3)
@@ -105,10 +108,15 @@ GEM
       nokogiri (>= 1.5.1, != 1.12.3, != 1.12.2, != 1.12.1, != 1.12.0)
     timeout (0.4.0)
     unicode-display_width (2.4.2)
+    vcr (6.2.0)
     wasabi (3.8.0)
       addressable
       httpi (~> 3.0)
       nokogiri (>= 1.4.2)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   arm64-darwin-21
@@ -123,6 +131,8 @@ DEPENDENCIES
   rake
   rspec (~> 3.6)
   rubocop
+  vcr
+  webmock
 
 BUNDLED WITH
    2.3.26
