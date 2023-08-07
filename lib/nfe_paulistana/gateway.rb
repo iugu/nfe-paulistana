@@ -78,7 +78,7 @@ module NfePaulistana
     def request(method, data = {})
       response = @connection.client.call(method, message: XmlBuilder.new.xml_for(method, data, @connection.certificate))
       method_response = "#{method}_response".to_sym
-      Response.new(xml: response.body[method_response][:retorno_xml], method:)
+      Response.new(xml: response.body[method_response][:retorno_xml], method: method) # rubocop:disable Style/HashSyntax
     rescue Savon::Error => e
       e
     end
